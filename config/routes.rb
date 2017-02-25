@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-
-  root 'home#welcome'
+  resources :sessions, only: [:new, :create]
 
   resources :users
+  root 'home#welcome'
 
-  # get 'users' => 'users#n' 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  delete '/log_out' => 'sessions#destroy'
+ 
 end

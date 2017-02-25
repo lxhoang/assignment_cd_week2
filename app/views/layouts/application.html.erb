@@ -9,7 +9,21 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-faded">
+	<form class="form-inline">
+    <button class="btn btn-outline-success" type="button"><%= link_to "SnapChat", root_path %></button>  
+  	</form>
+
+  	<div class="nav-item navbar-toggler-right"> 
+		<%if current_user %>
+			<%= link_to "Log out as #{current_user.name.capitalize}", log_out_path , method: 'delete'%>
+		<%end%>
+  	</div>
+
+
+  </nav>
   <div class="container">
+  	<%= flash_messages %>
   	<%= yield %>
   </div>
     
