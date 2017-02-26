@@ -1,0 +1,7 @@
+<h2>Friends</h2>
+
+<%= current_user.friends.count%>
+
+<% current_user.friends.each do |friend| %>
+	<p><%= friend %></p>
+<% end %>

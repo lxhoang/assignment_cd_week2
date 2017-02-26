@@ -1,2 +1,5 @@
-<h1>Home#welcome</h1>
-<%= link_to "Inbox", received_messages_path	 %>
+<%if current_user%>
+<h1>Welcome <%= current_user.name.capitalize %> to the SnapChat </h1>
+<%= link_to "Inbox", received_messages_path, class: 'btn btn-primary' %>
+<%= link_to "Friends", users_path ,class: 'btn btn-primary' %>
+<%end%>

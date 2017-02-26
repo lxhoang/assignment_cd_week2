@@ -1,13 +1,28 @@
-<% @users_execept_current = @users - [@user]%>
+<% @users.each do |user| %>
 
-<% @users_execept_current.each do |user|%>
-<div>
-	<p>
-		<strong><%= user.name %></strong> | 
-		<strong><%= user.email %></strong> | 
-		<%= link_to "Add Friend", friendships_path(friend_id: user) , method: :post %>
-	</p>
+	<% if user.id != current_user.id %>
+		<div class="card" style="width: 20rem;">
+			<img class="card-img-top" src="https://robohash.org/<%=rand(100)%>?set=set2" >
+			
+			<div class="card-block">
+			<%= user.email%>
+			<% if (current_user.friends.ids.include?(user.id))%>
+			
+			<%= link_to "Message", '', class: 'btn btn-primary' %>
 
-</div>
+			<%else%>
+			
+			<%= link_to "Add Friend", friendships_path(:friend_id => user), method: :post , class: 'btn btn-secondary'%>
+			</div>
+			<% end %>
+			
+		</div>
+
+			
+		
+		
+	<%end%>
 
 <% end %>
+
+
