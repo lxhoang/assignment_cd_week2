@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
 
 	def index
 		load_user
-		@messages = @user.received_messages
+		# raise 'debug'
+		# @messages = @user.received_messages
 	end
 
 	def show

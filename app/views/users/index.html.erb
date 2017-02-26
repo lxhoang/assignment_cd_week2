@@ -1,1 +1,13 @@
-asd
+<% @users_execept_current = @users - [@user]%>
+
+<% @users_execept_current.each do |user|%>
+<div>
+	<p>
+		<strong><%= user.name %></strong> | 
+		<strong><%= user.email %></strong> | 
+		<%= link_to "Add Friend", friendships_path(friend_id: user) , method: :post %>
+	</p>
+
+</div>
+
+<% end %>

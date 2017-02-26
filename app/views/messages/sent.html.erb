@@ -1,3 +1,46 @@
-<h1>Sent messages</h1>
+<h1>Received Messages</h1>
 
-<%= render 'message' %>
+<div class="row">
+
+  <%= render 'left_section' %>
+
+  <div class = "col-9">
+    
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th>#</th>
+          <th>To</th>
+          <th>Body</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <% @messages.each_with_index do |message,index| %>
+       
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= message.recipient %></td>
+
+          <td> 
+      <% if !message.read? %>
+            <b>
+        <% end %>
+          
+          <%= link_to message.body , message_path(message.id) %> 
+          
+       <% if !message.read? %>
+            </b>
+        <% end %>
+          </td>
+
+          <td><%= distance_of_time_in_words_to_now(message.created_at) %></td>
+        </tr>
+ 
+        <%end%>
+        
+      </tbody>
+    </table>
+
+</div>

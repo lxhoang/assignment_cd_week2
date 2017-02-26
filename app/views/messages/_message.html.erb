@@ -1,7 +1,4 @@
-<div class="row">
-  <%= render 'left_section' %>
 
-  <div class = "col-9">
     
     <table class="table">
       <thead class="thead-default">
@@ -21,7 +18,7 @@
           <td><%= message.sender %></td>
 
           <td> 
- <% if !message.read? %>
+      <% if !message.read? %>
             <b>
         <% end %>
           
@@ -40,9 +37,5 @@
       </tbody>
     </table>
 
-  </div>
-
-
-</div>
 
 
