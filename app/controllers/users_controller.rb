@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+	def index
+		@user = current_user
+	end
 	
 	def new
 		@user = User.new(email: params[:email])
@@ -13,6 +17,10 @@ class UsersController < ApplicationController
 		else
 			render 'new'		
 		end
+	end
+
+	def inbox
+		
 	end
 
 	private

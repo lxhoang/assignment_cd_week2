@@ -1,0 +1,30 @@
+<h1>Messages#show</h1>
+<p>Find me in app/views/messages/show.html.erb</p>
+
+<div class="row" >
+
+<%= render 'left_section'  %>
+
+	<div class = "col-9">
+    <%= link_to 'Back', messages_path %>
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+
+          <th>To: </th>
+          <th><%= @message.sender%></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="2">Content</td></tr>
+        <tr><td colspan="2"><%= @message.body %></td></tr>
+        
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+

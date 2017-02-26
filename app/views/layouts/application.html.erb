@@ -17,7 +17,7 @@
 	    <div class="nav-item navbar-toggler-right">
 			
 			<%if current_user %>
-				<div><%= link_to "*Log out as #{current_user.name.capitalize}", log_out_path , method: 'delete', class: 'btn btn-primary' %></div>
+				<div><%= link_to "*Log out as '#{current_user.email}'", log_out_path , method: 'delete', class: 'btn btn-primary' %></div>
 			<%else%>
 				<%= link_to "Sign_Up", new_user_path, class: 'btn btn-primary' %>
 				<%= link_to "Sign In", new_session_path, class: 'btn btn-primary' %>
