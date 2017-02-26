@@ -14,11 +14,11 @@ class User < ApplicationRecord
 	end
 
 	def received_messages
-		Message.where(recipient_id: self.id)
+		Message.where(recipient_id: self.id).order('created_at DESC')
 	end
 
 	def sent_messages
-		Message.where(sender_id: self.id)
+		Message.where(sender_id: self.id).order('created_at DESC')
 	end
 
 	def latest_received_messages(n)
