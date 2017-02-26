@@ -3,9 +3,10 @@
  
  	<%= f.label :recipient_id %>
 	<%= f.select :recipient_id, @users.map { |u| [u.email, u.id] } %>
-
+<br>
 	<%= f.label :body %>
-	<%= f.text_field :body %>
-	<%= f.submit %>
+	<%= f.text_field :body, size: '100' %>
+	<br>
+	<%= f.submit "Send", class: 'btn btn-primary' %>
 
 <% end %>
